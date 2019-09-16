@@ -21,15 +21,16 @@ after_success:
   - docker push mikedutuandu/multi-server
   - docker push mikedutuandu/multi-worker
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-west-1
-#   app: multi-docker
-#   env: MultiDocker-env
-#   bucket_name: elasticbeanstalk-us-west-1-306476627547
-#   bucket_path: docker-multi
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key:
-#     secure: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: ap-southeast-1
+  app: test_mutil_docker
+  env: TestMutilDocker-env
+  bucket_name: elasticbeanstalk-ap-southeast-1-595031881275
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: 
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
